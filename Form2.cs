@@ -21,5 +21,12 @@ namespace WinForms_1
         {
 
         }
+
+        private void btn1_MouseMove(object sender, MouseEventArgs e)
+        {
+            Random r = new Random();
+            btn1.Left = r.Next(0, this.ClientSize.Width - btn1.Width);
+            btn1.Top = r.Next(0, this.ClientSize.Height - btn1.Height);
+        }
     }
 }

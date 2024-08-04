@@ -67,9 +67,9 @@
             // 
             button2.Location = new Point(24, 308);
             button2.Name = "button2";
-            button2.Size = new Size(216, 23);
+            button2.Size = new Size(85, 41);
             button2.TabIndex = 1;
-            button2.Text = "Здарова, заебал";
+            button2.Text = "Здесь чудо кнопка";
             button2.UseVisualStyleBackColor = true;
             button2.Click += TextChange2;
             // 
@@ -179,15 +179,15 @@
             // вариант1ToolStripMenuItem
             // 
             вариант1ToolStripMenuItem.Name = "вариант1ToolStripMenuItem";
-            вариант1ToolStripMenuItem.Size = new Size(128, 22);
-            вариант1ToolStripMenuItem.Text = "Вариант 1";
+            вариант1ToolStripMenuItem.Size = new Size(180, 22);
+            вариант1ToolStripMenuItem.Text = "Открыть";
             вариант1ToolStripMenuItem.Click += вариант1ToolStripMenuItem_Click;
             // 
             // вариант2ToolStripMenuItem
             // 
             вариант2ToolStripMenuItem.Name = "вариант2ToolStripMenuItem";
-            вариант2ToolStripMenuItem.Size = new Size(128, 22);
-            вариант2ToolStripMenuItem.Text = "Вариант 2";
+            вариант2ToolStripMenuItem.Size = new Size(180, 22);
+            вариант2ToolStripMenuItem.Text = "Сохранить";
             // 
             // видToolStripMenuItem
             // 
@@ -222,6 +222,7 @@
             btnSave.TabIndex = 12;
             btnSave.Text = "Сохранить";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // openFileDialog1
             // 

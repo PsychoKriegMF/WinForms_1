@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            btn1 = new Button();
             SuspendLayout();
             // 
             // textBox1
@@ -43,26 +43,22 @@
             textBox1.TextAlign = HorizontalAlignment.Center;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
-            // textBox2
+            // btn1
             // 
-            textBox2.BackColor = SystemColors.HotTrack;
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Segoe UI", 70F);
-            textBox2.Location = new Point(188, 111);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(389, 136);
-            textBox2.TabIndex = 1;
-            textBox2.TabStop = false;
-            textBox2.Text = "HELLO";
-            textBox2.TextAlign = HorizontalAlignment.Center;
+            btn1.Location = new Point(324, 193);
+            btn1.Name = "btn1";
+            btn1.Size = new Size(97, 35);
+            btn1.TabIndex = 1;
+            btn1.Text = "Нажми меня";
+            btn1.UseVisualStyleBackColor = true;
+            btn1.MouseMove += btn1_MouseMove;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox2);
+            Controls.Add(btn1);
             Controls.Add(textBox1);
             Name = "Form2";
             Text = "Form2";
@@ -73,6 +69,6 @@
         #endregion
 
         private TextBox textBox1;
-        private TextBox textBox2;
+        private Button btn1;
     }
 }

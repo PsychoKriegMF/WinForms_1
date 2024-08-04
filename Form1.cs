@@ -55,11 +55,17 @@ namespace WinForms_1
 
         private void âàðèàíò1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (âàðèàíò1ToolStripMenuItem.Enabled)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                Form2 form2 = new Form2();
-                form2.Show();
+                filename = openFileDialog1.FileName;
             }
+            textBox1.Text += filename + Environment.NewLine;
+            StreamReader sr = new StreamReader(filename);
+            while (!sr.EndOfStream)
+            {
+                textBox1.Text += sr.ReadLine() + Environment.NewLine;
+            }
+            sr.Close();
         }
 
         private void óäàëèòüToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,17 +80,33 @@ namespace WinForms_1
         string filename;
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 filename = openFileDialog1.FileName;
             }
             textBox1.Text += filename + Environment.NewLine;
             StreamReader sr = new StreamReader(filename);
-            while(!sr.EndOfStream)
+            while (!sr.EndOfStream)
             {
                 textBox1.Text += sr.ReadLine() + Environment.NewLine;
             }
             sr.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile1 = new SaveFileDialog();
+            saveFile1.DefaultExt = "*.txt";
+            saveFile1.Filter = "Text files|*.txt";
+            if (saveFile1.ShowDialog() == System.Windows.Forms.DialogResult.OK &&
+                saveFile1.FileName.Length > 0)
+            {
+                using (StreamWriter sw = new StreamWriter(saveFile1.FileName, true))
+                {
+                    sw.WriteLine(textBox1.Text);
+                    sw.Close();
+                }
+            }
         }
     }
 }
